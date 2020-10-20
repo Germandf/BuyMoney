@@ -1,0 +1,37 @@
+<h2>Lista de postres</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Precio (individual - dos porciones)</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img [src]="dessert.image" [alt]="dessert.name" class="dessertImage"></td>
+            <td>{{dessert.name}}</td>
+            <td>{{dessert.price}} - {{dessert.price2}}</td>
+            <td>{{dessert.stock}}</td>
+        </tr>
+        <tr>
+            <th>Imagen</th>
+            <td>Mini Torta Brownie con nueces</td>
+            <td>180 - 340</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <th>Imagen</th>
+            <td>Mini Lemon Pie</td>
+            <td>130 - 250</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <th>Imagen</th>
+            <td>Tarta Tofi</td>
+            <td>130 - 250</td>
+            <td>30</td>
+        </tr>
+    </tbody>
+</table>
