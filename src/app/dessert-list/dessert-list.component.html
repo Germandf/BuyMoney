@@ -9,29 +9,14 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let dessert of desserts" [ngClass]="{'discount': dessert.hasDiscount}">
             <td><img [src]="dessert.image" [alt]="dessert.name" class="dessertImage"></td>
             <td>{{dessert.name}}</td>
-            <td>{{dessert.price}} - {{dessert.price2}}</td>
-            <td>{{dessert.stock}}</td>
-        </tr>
-        <tr>
-            <th>Imagen</th>
-            <td>Mini Torta Brownie con nueces</td>
-            <td>180 - 340</td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <th>Imagen</th>
-            <td>Mini Lemon Pie</td>
-            <td>130 - 250</td>
-            <td>15</td>
-        </tr>
-        <tr>
-            <th>Imagen</th>
-            <td>Tarta Tofi</td>
-            <td>130 - 250</td>
-            <td>30</td>
+            <td>{{dessert.price | currency}} - {{dessert.price2 | currency}}</td>
+            <td>
+                <span *ngIf="dessert.stock>0">{{dessert.stock}}</span>
+                <span class="badge badge-warning" *ngIf="dessert.stock==0">Sin stock</span>
+            </td>
         </tr>
     </tbody>
 </table>
