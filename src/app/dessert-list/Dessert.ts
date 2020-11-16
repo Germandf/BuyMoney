@@ -5,4 +5,5 @@ export interface Dessert {
     stock: number,
     image: string,
     hasDiscount: boolean,
+    quantity: number,
 }

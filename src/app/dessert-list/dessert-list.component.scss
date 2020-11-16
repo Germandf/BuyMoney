@@ -2,11 +2,23 @@ h2{
     color: lightcoral;
 }
 
-.dessertImage{
-    width: 200px;
-}
-
 .discount{
     border: 2px solid green;
     background: lightgreen;
+}
+
+.buyZone{
+    display: flex;
+}
+
+/* Remove input number arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+  width: 30px;
+  text-align: center;
 }
