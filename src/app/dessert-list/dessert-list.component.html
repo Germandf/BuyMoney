@@ -1,5 +1,5 @@
 <h2>Lista de postres</h2>
-<table class="table">
+<table class="table text-center">
     <thead>
         <tr>
             <th>Imagen</th>
@@ -11,7 +11,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let dessert of desserts" [ngClass]="{'discount': dessert.hasDiscount}">
-            <td><img [src]="dessert.image" [alt]="dessert.name" class="img-thumbnail" width="100"></td>
+            <td><img [src]="dessert.image" [alt]="dessert.name" class="img-thumbnail" width="100%"></td>
             <td>{{dessert.name}}</td>
             <td>Individual: {{dessert.price | currency}}<br>
                 Porciones(2): {{dessert.price2 | currency}}</td>
@@ -20,7 +20,7 @@
                 <span *ngIf="dessert.stock==0" class="badge badge-warning" >Sin stock</span>
             </td>
             <td>
-                <span class="buyZone">
+                <span *ngIf="dessert.stock>0" class="buyZone">
                     <button (click)="downQuantity(dessert)" class="btn btn-primary btn-sm">-</button>
                     <input type="number" [(ngModel)]="dessert.quantity" (keyup)="onChangeQuantity(dessert)">
                     <button (click)="upQuantity(dessert)" class="btn btn-primary btn-sm">+</button>

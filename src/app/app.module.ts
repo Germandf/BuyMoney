@@ -6,11 +6,17 @@ import { AppComponent } from './app.component';
 import { DessertListComponent } from './dessert-list/dessert-list.component';
 
 import { FormsModule } from '@angular/forms';
+import { LesPatisseriesDessertsComponent } from './les-patisseries-desserts/les-patisseries-desserts.component';
+import { LesPatisseriesAboutComponent } from './les-patisseries-about/les-patisseries-about.component';
+import { DessertCartComponent } from './dessert-cart/dessert-cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DessertListComponent
+    DessertListComponent,
+    LesPatisseriesDessertsComponent,
+    LesPatisseriesAboutComponent,
+    DessertCartComponent
   ],
   imports: [
     BrowserModule,
