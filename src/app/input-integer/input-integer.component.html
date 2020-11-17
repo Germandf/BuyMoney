@@ -1,0 +1,5 @@
+<span class="buyZone">
+    <button (click)="downQuantity()" class="btn btn-primary btn-sm">-</button>
+    <input type="number" [(ngModel)]="quantity" (keyup)="onChangeQuantity()">
+    <button (click)="upQuantity()" class="btn btn-primary btn-sm">+</button>
+</span>

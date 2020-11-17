@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { LesPatisseriesDessertsComponent } from './les-patisseries-desserts/les-patisseries-desserts.component';
 import { LesPatisseriesAboutComponent } from './les-patisseries-about/les-patisseries-about.component';
 import { DessertCartComponent } from './dessert-cart/dessert-cart.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DessertCartComponent } from './dessert-cart/dessert-cart.component';
     DessertListComponent,
     LesPatisseriesDessertsComponent,
     LesPatisseriesAboutComponent,
-    DessertCartComponent
+    DessertCartComponent,
+    InputIntegerComponent
   ],
   imports: [
     BrowserModule,

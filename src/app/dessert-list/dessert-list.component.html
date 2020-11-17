@@ -20,11 +20,7 @@
                 <span *ngIf="dessert.stock==0" class="badge badge-warning" >Sin stock</span>
             </td>
             <td>
-                <span *ngIf="dessert.stock>0" class="buyZone">
-                    <button (click)="downQuantity(dessert)" class="btn btn-primary btn-sm">-</button>
-                    <input type="number" [(ngModel)]="dessert.quantity" (keyup)="onChangeQuantity(dessert)">
-                    <button (click)="upQuantity(dessert)" class="btn btn-primary btn-sm">+</button>
-                </span>
+                <app-input-integer *ngIf="dessert.stock>0" [(quantity)]="dessert.quantity" [max]="dessert.stock" (maxReached)="maxReached($event)"></app-input-integer>
             </td>
         </tr>
     </tbody>

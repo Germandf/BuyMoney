@@ -52,25 +52,8 @@ export class DessertListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  upQuantity(dessert: Dessert): void {
-    if(dessert.stock > dessert.quantity){
-      dessert.quantity++;
-    }
-  }
-
-  downQuantity(dessert: Dessert): void {
-    if(dessert.quantity > 0){
-      dessert.quantity--;
-    }
-  }
-
-  onChangeQuantity(dessert: Dessert): void{
-    if(dessert.quantity > dessert.stock){
-      dessert.quantity = dessert.stock;
-    }
-    else if(dessert.quantity < 0){
-      dessert.quantity = 0;
-    }
+  maxReached(message : string){
+    alert(message);
   }
 
 }
