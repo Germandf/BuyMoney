@@ -10,7 +10,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let dessert of desserts" [ngClass]="{'discount': dessert.hasDiscount}">
+        <tr *ngFor="let dessert of desserts$ | async" [ngClass]="{'discount': dessert.hasDiscount}">
             <td><img [src]="dessert.image" [alt]="dessert.name" class="img-thumbnail" width="100%"></td>
             <td>{{dessert.name}}</td>
             <td>Individual: {{dessert.price | currency}}<br>
