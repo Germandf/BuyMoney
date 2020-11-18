@@ -20,7 +20,10 @@
                 <span *ngIf="dessert.stock==0" class="badge badge-warning" >Sin stock</span>
             </td>
             <td>
-                <app-input-integer *ngIf="dessert.stock>0" [(quantity)]="dessert.quantity" [max]="dessert.stock" (maxReached)="maxReached($event)"></app-input-integer>
+                <span *ngIf="dessert.stock>0">
+                    <app-input-integer [(quantity)]="dessert.quantity" [max]="dessert.stock" (maxReached)="maxReached($event)"></app-input-integer>
+                    <button (click)="addToCart(dessert)" class="btn btn-primary btn-sm">Agregar</button>
+                </span>
             </td>
         </tr>
     </tbody>
