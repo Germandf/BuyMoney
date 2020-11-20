@@ -10,6 +10,10 @@ input::-webkit-inner-spin-button {
 }
 input[type=number] {
   -moz-appearance: textfield;
-  width: 30px;
+  width: 35px;
   text-align: center;
+}
+
+button{
+  width: 30px;
 }

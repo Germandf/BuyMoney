@@ -1,16 +1,16 @@
-<h2>Lista de postres</h2>
-<table class="table text-center">
-    <thead>
+<h2 class="ml-3 text-center mb-4">Lista de postres</h2>
+<table class="table table-hover text-center">
+    <thead class="thead-dark">
         <tr>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Stock</th>
-            <th>Compra</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Compra</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let dessert of desserts$ | async" [ngClass]="{'discount': dessert.hasDiscount}">
+        <tr *ngFor="let dessert of desserts$ | async" [ngClass]="{'table-success': dessert.hasDiscount}" scope="row">
             <td><img [src]="dessert.image" [alt]="dessert.name" class="img-thumbnail" width="100%"></td>
             <td>{{dessert.name}}</td>
             <td>Individual: {{dessert.price | currency}}<br>
@@ -22,7 +22,7 @@
             <td>
                 <span *ngIf="dessert.stock>0">
                     <app-input-integer [(quantity)]="dessert.quantity" [max]="dessert.stock" (maxReached)="maxReached($event)"></app-input-integer>
-                    <button (click)="addToCart(dessert)" class="btn btn-primary btn-sm">Agregar</button>
+                    <button (click)="addToCart(dessert)" class="btn btn-dark btn-sm mt-2">Agregar</button>
                 </span>
             </td>
         </tr>
