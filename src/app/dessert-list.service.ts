@@ -145,4 +145,15 @@ export class DessertListService {
   ngOnInit(): void {
   }
 
+  restoreQuantity(dessert: Dessert){
+    let item : Dessert = this._dessertList.find((v1) => v1.name == dessert.name);
+    if(item){
+      item.stock += dessert.quantity;
+    }
+    else{
+      alert("Hubo un error");
+    }
+    this.dessertList.next(this._dessertList);
+  }
+
 }

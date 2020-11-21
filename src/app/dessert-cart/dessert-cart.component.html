@@ -6,7 +6,7 @@
             <h5 class="card-title">{{product.name}}</h5>
             <p class="card-text">Cantidad: {{product.quantity}}</p>
             <div class="text-right">
-                <button class="btn btn-dark btn">Quitar</button>
+                <button (click)="removeFromCart(product)" class="btn btn-dark btn">Quitar</button>
             </div>
         </div>
     </div>

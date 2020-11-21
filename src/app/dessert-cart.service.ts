@@ -26,4 +26,15 @@ export class DessertCartService {
     // here i update cartList to a new value, so i use the 'next' method and insert _cartList
     this.cartList.next(this._cartList);
   }
+
+  removeFromCart(dessert: Dessert) {
+    let itemIndex = this._cartList.indexOf(dessert);
+    if(itemIndex >= 0){
+      this._cartList.splice(itemIndex, 1);
+      this.cartList.next(this._cartList);
+    }
+    else{
+      alert("No se encontró el item a eliminar");
+    }
+  }
 }

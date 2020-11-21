@@ -21,13 +21,18 @@ export class DessertListComponent implements OnInit {
   }
 
   addToCart(dessert: Dessert): void{
-    this.cart.addToCart(dessert);
-    dessert.stock -= dessert.quantity;
-    dessert.quantity = 0;
+    if(dessert.quantity > 0 && dessert.quantity <= dessert.stock){
+      this.cart.addToCart(dessert);
+      dessert.stock -= dessert.quantity;
+      dessert.quantity = 0;
+    }
+    else{
+      alert("Ingrese una cantidad válida");
+    }
   }
 
   maxReached(message : string){
     alert(message);
   }
-
+  
 }
