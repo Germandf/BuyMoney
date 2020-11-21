@@ -1,3 +1,7 @@
+## IMPORTANT - CUSTOM README
+
+To experiment the full experience, download and put the "images" folder with all its content inside the "assets" folder
+
 # LesPatisseries
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.

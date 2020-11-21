@@ -37,4 +37,14 @@ export class DessertCartService {
       alert("No se encontró el item a eliminar");
     }
   }
+
+  getCartLength(){
+    return this._cartList.length;
+  }
+
+  getTotalValue(){
+    let totalValue = 0;
+    this._cartList.forEach(element => totalValue += element.quantity * element.price);
+    return totalValue;
+  }
 }

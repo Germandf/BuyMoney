@@ -13,8 +13,7 @@
         <tr *ngFor="let dessert of desserts$ | async" [ngClass]="{'table-success': dessert.hasDiscount}" scope="row">
             <td><img [src]="dessert.image" [alt]="dessert.name" class="img-thumbnail" width="100%"></td>
             <td>{{dessert.name}}</td>
-            <td>Individual: {{dessert.price | currency}}<br>
-                Porciones(2): {{dessert.price2 | currency}}</td>
+            <td>{{dessert.price | currency}}</td>
             <td>
                 <span *ngIf="dessert.stock>0">{{dessert.stock}}</span>
                 <span *ngIf="dessert.stock==0" class="badge badge-warning" >Sin stock</span>

@@ -1,13 +1,19 @@
-<h2 class="text-center mb-4"><u>Carrito de compras</u></h2>
-<div class="col-12 p-0 m-0 row d-flex justify-content-center">
-    <div class="card shadow mb-2 mr-2" style="width: 14rem;" *ngFor="let product of cartList$ | async">
-        <img class="card-img-top dessertCardImg" [src]="product.image" alt="Card image cap">
-        <div class="card-body py-2 px-3">
-            <h5 class="card-title">{{product.name}}</h5>
-            <p class="card-text">Cantidad: {{product.quantity}}</p>
-            <div class="text-right">
-                <button (click)="removeFromCart(product)" class="btn btn-dark btn">Quitar</button>
+<h2 class="text-center mb-4"><u>Carrito</u></h2>
+<div>
+    <div class="col-12 p-0 m-0 row d-flex justify-content-center">
+        <div class="card shadow mb-2 mr-2" style="width: 14rem;" *ngFor="let product of cartList$ | async">
+            <img class="card-img-top dessertCardImg" [src]="product.image" alt="Card image cap">
+            <div class="card-body py-2 px-3">
+                <h5 class="card-title">{{product.name}}</h5>
+                <p class="card-text">Cantidad: {{product.quantity}}</p>
+                <div class="text-right">
+                    <button (click)="removeFromCart(product)" class="btn btn-dark">Quitar</button>
+                </div>
             </div>
         </div>
+    </div>
+    <div *ngIf="isEmpty() == false" class="text-center">
+        <h5 class="mt-4 mb-2">Suma total: {{getTotalValue() | currency}}</h5>
+        <button (click)="buy()" class="btn btn-dark btn-sm">Comprar</button>
     </div>
 </div>

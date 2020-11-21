@@ -27,4 +27,21 @@ export class DessertCartComponent implements OnInit {
     this.list.restoreQuantity(dessert);
   }
 
+  isEmpty(){
+    let cartLength = this.cart.getCartLength();
+    if(cartLength <= 0){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  getTotalValue(){
+    return this.cart.getTotalValue();
+  }
+
+  buy(){
+    alert("Ups... ¡Sin implementar!");
+  }
 }
