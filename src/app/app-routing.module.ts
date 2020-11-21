@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LesPatisseriesDessertsComponent } from '../app/les-patisseries-desserts/les-patisseries-desserts.component';
 import { LesPatisseriesAboutComponent } from '../app/les-patisseries-about/les-patisseries-about.component';
+import { LesPatisseriesContactComponent } from './les-patisseries-contact/les-patisseries-contact.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path:'desserts',
     component: LesPatisseriesDessertsComponent,
+  },
+  {
+    path:'contact',
+    component: LesPatisseriesContactComponent,
   },
   {
     path:'about',

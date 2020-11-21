@@ -10,6 +10,7 @@ import { LesPatisseriesDessertsComponent } from './les-patisseries-desserts/les-
 import { LesPatisseriesAboutComponent } from './les-patisseries-about/les-patisseries-about.component';
 import { DessertCartComponent } from './dessert-cart/dessert-cart.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
+import { LesPatisseriesContactComponent } from './les-patisseries-contact/les-patisseries-contact.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
     LesPatisseriesDessertsComponent,
     LesPatisseriesAboutComponent,
     DessertCartComponent,
-    InputIntegerComponent
+    InputIntegerComponent,
+    LesPatisseriesContactComponent
   ],
   imports: [
     BrowserModule,
