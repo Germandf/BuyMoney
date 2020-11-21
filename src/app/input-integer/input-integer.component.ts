@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Dessert } from '../dessert-list/Dessert';
 
 @Component({
   selector: 'app-input-integer',
@@ -19,9 +18,32 @@ export class InputIntegerComponent implements OnInit {
   quantityChange: EventEmitter<number> = new EventEmitter<number>();
 
   @Output()
+  minReached: EventEmitter<string> = new EventEmitter<string>();
+
+  @Output()
   maxReached: EventEmitter<string> = new EventEmitter<string>();
 
   ngOnInit(): void {
+  }
+
+  onChangeQuantity(): void{
+    if(this.quantity > this.max){
+      this.quantity = this.max;
+    }
+    else if(this.quantity < 0){
+      this.quantity = 0;
+    }
+    this.quantityChange.emit(this.quantity);
+  }
+
+  downQuantity(): void {
+    if(this.quantity > 0){
+      this.quantity--;
+      this.quantityChange.emit(this.quantity);
+    }
+    else{
+      this.minReached.emit("Se alcanzó el mínimo permitido");
+    }
   }
 
   upQuantity(): void {
@@ -34,20 +56,4 @@ export class InputIntegerComponent implements OnInit {
     }
   }
 
-  downQuantity(): void {
-    if(this.quantity > 0){
-      this.quantity--;
-      this.quantityChange.emit(this.quantity);
-    }
-  }
-
-  onChangeQuantity(): void{
-    if(this.quantity > this.max){
-      this.quantity = this.max;
-    }
-    else if(this.quantity < 0){
-      this.quantity = 0;
-    }
-    this.quantityChange.emit(this.quantity);
-  }
 }

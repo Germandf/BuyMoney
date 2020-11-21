@@ -31,7 +31,7 @@ export class DessertListComponent implements OnInit {
     }
   }
 
-  maxReached(message : string){
+  minMaxReached(message : string){
     alert(message);
   }
   

@@ -20,10 +20,11 @@
             </td>
             <td>
                 <span *ngIf="dessert.stock>0">
-                    <app-input-integer [(quantity)]="dessert.quantity" [max]="dessert.stock" (maxReached)="maxReached($event)"></app-input-integer>
+                    <app-input-integer [(quantity)]="dessert.quantity" [max]="dessert.stock" (minReached)="minMaxReached($event)" (maxReached)="minMaxReached($event)"></app-input-integer>
                     <button (click)="addToCart(dessert)" class="btn btn-dark btn-sm mt-2">Agregar</button>
                 </span>
             </td>
         </tr>
     </tbody>
 </table>
+<p class="font-weight-bold font-italic">*Nota: Los productos en color <span class="text-success">verde</span> están en oferta</p>

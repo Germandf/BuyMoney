@@ -5,7 +5,7 @@
             <img class="card-img-top dessertCardImg" [src]="product.image" alt="Card image cap">
             <div class="card-body py-2 px-3">
                 <h5 class="card-title">{{product.name}}</h5>
-                <p class="card-text">Cantidad: {{product.quantity}}</p>
+                <p class="card-text">Cantidad: {{product.quantity}} | {{product.price | currency}}</p>
                 <div class="text-right">
                     <button (click)="removeFromCart(product)" class="btn btn-dark">Quitar</button>
                 </div>
